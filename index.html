@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REact Components</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script type="text/babel">//BABEL SETUP!!!
+        // // function Header(){ // !!! UI komponenta
+        // //     return <h1>Header</h1> // JSX moze samo 1 element <>
+        // // }
+
+        const Logo = ()=>{
+            return (
+                <h1><a href="" >Logo {new Date().toLocaleDateString()}</a></h1>
+            )
+        }
+
+        // const Header = ()=>{
+        //     return (
+        //         <header>
+        //             <Logo />
+        //             <h1>Header</h1>
+        //         </header>
+        //         )
+        // }
+        // ReactDOM.render(<Header/>, document.querySelector('#app')) //(sta, gde)
+
+        // CLASS komponenta
+        class Header extends React.Component { // mora ext..R..C.. da bi react znao da je ova klasa u stvari komponenta
+            render() {
+                return (
+                    // <Logo /> // function component unutra class componente ... moguce i to
+                    // <h1>Calss Component</h1>
+                    <h1>Random number {Math.floor(Math.random()*(200-100)+100)} </h1>//prikazuje brojeve od 100 do 200
+                )
+            }
+        }
+
+        ReactDOM.render(<Header/>, document.querySelector('#app')) //(sta, gde)
+
+
+    </script>
+</body>
+</html>
